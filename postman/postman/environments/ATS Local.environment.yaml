@@ -1,0 +1,4 @@
+name: ATS Local
+values:
+  - key: base_url
+    value: ''
