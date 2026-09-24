@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{base_url}}/companies"
+method: POST
+body:
+  type: json
+  content: '   { "name": "Google", "website": "google.com", "industry": "Tech", "location": "Remote" }'
+order: 4371590071870127

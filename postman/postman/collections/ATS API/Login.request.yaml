@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/auth/login"
+method: POST
+body:
+  type: json
+  content: '{ "email": "test@example.com", "password": "WRONGpassword" }'
+scripts:
+  - type: afterResponse
+    code: "const json = pm.response.json();\r
+
+      if (json.token) pm.environment.set(\"token\", json.token);"
+    language: text/javascript
+order: 2045506711426093
