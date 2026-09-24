@@ -1,9 +1,16 @@
 exports.up = (pgm) => {
-  pgm.createTable("users", {
-    id: "id", // shorthand: auto-incrementing primary key
+  pgm.createTable("companies", {
+    id: "id",
+    user_id: {
+      type: "integer",
+      notNull: true,
+      references: '"users"',
+      onDelete: "cascade", // delete a user -> their companies go too
+    },
     name: { type: "varchar(255)", notNull: true },
-    email: { type: "varchar(255)", notNull: true, unique: true },
-    password_hash: { type: "varchar(255)", notNull: true },
+    website: { type: "varchar(255)" },
+    industry: { type: "varchar(255)" },
+    location: { type: "varchar(255)" },
     created_at: {
       type: "timestamp",
       notNull: true,
@@ -13,5 +20,5 @@ exports.up = (pgm) => {
 };
 
 exports.down = (pgm) => {
-  pgm.dropTable("users");
+  pgm.dropTable("companies");
 };

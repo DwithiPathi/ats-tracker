@@ -1,4 +1,8 @@
 $kind: http-request
-url: ""
+url: "{{base_url}}/health"
 method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
 order: 1789441549743
