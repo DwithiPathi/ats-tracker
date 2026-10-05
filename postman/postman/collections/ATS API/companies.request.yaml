@@ -4,4 +4,8 @@ method: POST
 body:
   type: json
   content: '   { "name": "Google", "website": "google.com", "industry": "Tech", "location": "Remote" }'
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
 order: 4371590071870127
