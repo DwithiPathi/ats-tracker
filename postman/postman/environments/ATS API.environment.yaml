@@ -2,3 +2,5 @@ name: ATS API
 values:
   - key: base_url
     value: ''
+  - key: token
+    secret: true

@@ -8,6 +8,7 @@ const pool = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const companyRoutes = require("./routes/companyRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 // Test the database connection on startup
 pool.query("SELECT NOW()")
@@ -25,6 +26,7 @@ app.use("/applications", applicationRoutes);
 
 // ...
 app.use("/companies", companyRoutes);
+app.use("/contacts", contactRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
