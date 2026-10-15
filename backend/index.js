@@ -9,6 +9,9 @@ const authRoutes = require("./routes/authRoutes");
 const companyRoutes = require("./routes/companyRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const errorHandler = require("./middleware/errorHandler");
+// ... all your routes above ...
+app.use(errorHandler); // MUST be last
 
 // Test the database connection on startup
 pool.query("SELECT NOW()")

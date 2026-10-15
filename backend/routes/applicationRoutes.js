@@ -9,7 +9,11 @@ const {
   update,
   remove,
 } = require("../controllers/applicationController");
+const validate = require("../middleware/validate");
+const { companySchema } = require("../validators/schemas");
 
+router.post("/", validate(companySchema), create);
+router.put("/:id", validate(companySchema), update);
 router.use(requireAuth);
 router.post("/", create);
 router.get("/", list);
